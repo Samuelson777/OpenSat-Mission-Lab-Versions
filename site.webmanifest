@@ -1,0 +1,12 @@
+{
+  "name": "OpenSat Mission Lab",
+  "short_name": "OpenSat",
+  "description": "Interactive OpenSat Mission Lab engineering portfolio from v0.1 to v3.1.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {"src": "assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

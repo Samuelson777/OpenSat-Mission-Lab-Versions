@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenSat Mission Lab — an interactive engineering portfolio spanning orbital simulation, mission operations, geospatial processing, distributed systems, and safety-assured orchestration from v0.1 to v3.1.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="OpenSat Mission Lab — v0.1 to v3.1">
+  <meta property="og:description" content="Explore 35 releases of a home-PC space mission engineering platform.">
+  <meta property="og:type" content="website">
+  <title>OpenSat Mission Lab · v0.1 → v3.1</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="starfield" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="OpenSat Mission Lab home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 44 44" role="img"><circle cx="22" cy="22" r="5"/><ellipse cx="22" cy="22" rx="18" ry="8" transform="rotate(-28 22 22)"/><circle cx="37" cy="14" r="2.2"/></svg>
+      </span>
+      <span><strong>OpenSat</strong><small>Mission Lab</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#mission-control">Mission control</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#deploy">Deploy</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.4 8.4 0 0 1 8.8 3.8 8.5 8.5 0 1 0 20.2 15.2Z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#mission-control">Mission control</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#deploy">Deploy</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Open-source space systems portfolio</div>
+        <h1 id="heroTitle">From orbital mechanics<br>to <span class="gradient-text">safety-assured operations.</span></h1>
+        <p class="hero-lede">A single interactive website documenting the complete evolution of OpenSat Mission Lab—from the v0.1 CubeSat simulator to the v3.1 cryptographically governed mission-orchestration platform.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#mission-control">Launch mission view</a>
+          <a class="button secondary" href="#evolution">Explore 35 releases</a>
+        </div>
+        <ul class="hero-facts" aria-label="Project highlights">
+          <li><strong data-counter="203">0</strong><span>automated tests</span></li>
+          <li><strong data-counter="35">0</strong><span>documented releases</span></li>
+          <li><strong data-counter="28">0</strong><span>v3.1 controls</span></li>
+          <li><strong>Home PC</strong><span>offline-first path</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal" aria-label="Animated satellite orbit illustration">
+        <canvas id="orbitCanvas" width="720" height="620"></canvas>
+        <div class="orbit-card orbit-card-a"><span>Platform</span><strong>HEALTHY</strong></div>
+        <div class="orbit-card orbit-card-b"><span>Release</span><strong>v3.1.0</strong></div>
+        <div class="orbit-card orbit-card-c"><span>Safety states</span><strong>256 checked</strong></div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Technology domains">
+      <div class="trust-track">
+        <span>Orbital dynamics</span><span>ADCS</span><span>Mission control</span><span>Remote sensing</span><span>FastAPI</span><span>STAC</span><span>Zero trust</span><span>OpenTelemetry</span><span>Multi-region</span><span>Safety assurance</span>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="mission-control" aria-labelledby="missionTitle">
+      <div class="section-heading reveal">
+        <div><p class="kicker">Interactive telemetry</p><h2 id="missionTitle">Mission control, rebuilt for the browser.</h2></div>
+        <p>Replay a retained seven-day India flood-monitoring simulation. The website reads the actual mission-control dataset generated by the engineering application.</p>
+      </div>
+
+      <div class="mission-console reveal">
+        <div class="console-topbar">
+          <div class="console-title"><span class="status-light"></span><strong id="missionName">Loading mission data…</strong><span id="missionRelease">—</span></div>
+          <div class="console-clock"><span id="snapshotTime">T+00:00</span><small>MISSION ELAPSED</small></div>
+        </div>
+        <div class="console-grid">
+          <aside class="telemetry-rail" aria-label="Telemetry snapshot">
+            <article><span>Battery SOC</span><strong id="socValue">—</strong><div class="meter"><i id="socMeter"></i></div></article>
+            <article><span>Payload storage</span><strong id="storageValue">—</strong><div class="meter"><i id="storageMeter"></i></div></article>
+            <article><span>Pointing error</span><strong id="pointingValue">—</strong></article>
+            <article><span>Link margin</span><strong id="linkValue">—</strong></article>
+            <article><span>Power mode</span><strong class="mode-label" id="powerMode">—</strong></article>
+            <article><span>Flight software</span><strong class="mode-label" id="fswState">—</strong></article>
+          </aside>
+          <div class="chart-panel">
+            <div class="chart-header">
+              <div><span class="legend-line cyan"></span>Battery SOC</div>
+              <div><span class="legend-line violet"></span>Storage</div>
+              <button class="text-button" id="playMission" type="button">▶ Play replay</button>
+            </div>
+            <canvas id="telemetryChart" width="1100" height="470" aria-label="Battery and payload storage history"></canvas>
+            <div class="timeline-control">
+              <label for="missionSlider">Mission timeline</label>
+              <input id="missionSlider" type="range" min="0" max="100" value="0" step="1">
+              <div><span id="timelineStart">Day 1</span><span id="timelineEnd">Day 7</span></div>
+            </div>
+          </div>
+          <aside class="event-panel">
+            <div class="panel-label">Nearby operations</div>
+            <div id="eventList" class="event-list"><p class="loading">Loading event history…</p></div>
+          </aside>
+        </div>
+        <div class="console-footer">
+          <div><span>Telemetry delivery</span><strong id="deliveryKpi">—</strong></div>
+          <div><span>Images captured</span><strong id="imagesKpi">—</strong></div>
+          <div><span>Contacts</span><strong id="contactsKpi">—</strong></div>
+          <div><span>Watchdog resets</span><strong id="watchdogKpi">—</strong></div>
+          <a href="demos/mission-control.html" target="_blank" rel="noopener">Open original v0.8 dashboard ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evolution-section" id="evolution" aria-labelledby="evolutionTitle">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div><p class="kicker">Release explorer</p><h2 id="evolutionTitle">One project. Five engineering eras.</h2></div>
+          <p>Search by capability, filter by phase, and open any release to see its purpose, features, and retained evidence.</p>
+        </div>
+        <div class="release-tools reveal">
+          <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="releaseSearch" type="search" placeholder="Search releases: ADCS, STAC, security…" autocomplete="off"></label>
+          <div class="phase-filters" id="phaseFilters" aria-label="Filter releases by phase"></div>
+        </div>
+        <div class="phase-summary" id="phaseSummary"></div>
+        <div class="release-grid" id="releaseGrid"></div>
+        <p class="empty-state" id="releaseEmpty" hidden>No releases match this search.</p>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="architecture" aria-labelledby="architectureTitle">
+      <div class="section-heading reveal">
+        <div><p class="kicker">System architecture</p><h2 id="architectureTitle">A layered mission engineering stack.</h2></div>
+        <p>Every layer remains visible in the latest repository. Select a layer to inspect the capabilities accumulated across releases.</p>
+      </div>
+      <div class="architecture-layout reveal">
+        <div class="architecture-stack" id="architectureStack" role="tablist" aria-label="Architecture layers"></div>
+        <div class="architecture-detail" id="architectureDetail" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="evidence" aria-labelledby="evidenceTitle">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div><p class="kicker">Generated engineering evidence</p><h2 id="evidenceTitle">The portfolio is backed by executable artifacts.</h2></div>
+          <p>These are retained plots from the actual project outputs—not decorative mockups. Select an image to inspect it at full size.</p>
+        </div>
+        <div class="gallery-filters reveal" id="galleryFilters"></div>
+        <div class="evidence-grid" id="evidenceGrid"></div>
+        <div class="dashboard-links reveal">
+          <div><p class="kicker">Original dashboards</p><h3>Open the generated HTML evidence.</h3></div>
+          <div class="dashboard-link-grid" id="dashboardLinks"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="engineering" aria-labelledby="engineeringTitle">
+      <div class="section-heading reveal">
+        <div><p class="kicker">Engineering coverage</p><h2 id="engineeringTitle">Skills demonstrated across the full application.</h2></div>
+        <p>The repository connects scientific modeling, mission operations, geospatial analytics, platform engineering, security, and distributed-systems assurance.</p>
+      </div>
+      <div class="skills-grid reveal" id="skillsGrid"></div>
+    </section>
+
+    <section class="section deploy-section" id="deploy" aria-labelledby="deployTitle">
+      <div class="section-shell deploy-grid">
+        <div class="deploy-copy reveal">
+          <p class="kicker">GitHub Pages deployment</p>
+          <h2 id="deployTitle">Publish without a build pipeline.</h2>
+          <p>The site uses only HTML, CSS, JavaScript, JSON, and retained image assets. It works from the repository root or from a <code>/docs</code> folder.</p>
+          <ol class="deploy-steps">
+            <li><span>1</span><div><strong>Copy the website files</strong><p>Place this package in the repository root, or copy it into <code>docs/</code>.</p></div></li>
+            <li><span>2</span><div><strong>Push to GitHub</strong><p>Commit the files to the default branch.</p></div></li>
+            <li><span>3</span><div><strong>Enable Pages</strong><p>Repository Settings → Pages → Deploy from branch → choose the root or <code>/docs</code>.</p></div></li>
+          </ol>
+        </div>
+        <div class="terminal-card reveal" aria-label="Git commands">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>terminal</span></div>
+          <pre><code><span class="prompt">$</span> git add .
+<span class="prompt">$</span> git commit -m "Add OpenSat portfolio site"
+<span class="prompt">$</span> git push origin main
+
+<span class="comment"># Then enable GitHub Pages in Settings.</span>
+<span class="success">✓ No framework or build command required</span></code></pre>
+          <button class="copy-button" id="copyCommands" type="button">Copy commands</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta section-shell reveal">
+      <div>
+        <p class="kicker">OpenSat Mission Lab v3.1</p>
+        <h2>A home-PC project with full-stack space-engineering depth.</h2>
+        <p>Start with the mission replay, inspect the release history, and open the generated dashboards to see the evidence behind each capability.</p>
+      </div>
+      <div class="final-actions">
+        <a class="button primary" href="#mission-control">Replay mission</a>
+        <a class="button secondary" href="source-notes/PORTFOLIO.md">Read case study</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="5"/><ellipse cx="22" cy="22" rx="18" ry="8" transform="rotate(-28 22 22)"/><circle cx="37" cy="14" r="2.2"/></svg></span><div><strong>OpenSat Mission Lab</strong><p>Educational mission-engineering software. Not flight-certified.</p></div></div>
+      <div><strong>Explore</strong><a href="#evolution">Release history</a><a href="#architecture">Architecture</a><a href="#evidence">Evidence</a></div>
+      <div><strong>Project</strong><a href="source-notes/CHANGELOG.md">Changelog</a><a href="CITATION.cff">Citation</a><a href="LICENSE">License</a></div>
+      <p class="footer-note">Built as a dependency-free GitHub Pages application. The site represents deterministic engineering demonstrations and does not transmit real spacecraft commands.</p>
+    </div>
+  </footer>
+
+  <dialog class="release-dialog" id="releaseDialog" aria-labelledby="dialogTitle">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="Close release details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+    <button class="dialog-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <figure><img id="lightboxImage" src="" alt=""><figcaption><strong id="lightboxTitle"></strong><span id="lightboxCaption"></span></figcaption></figure>
+  </dialog>
+
+  <noscript><div class="noscript">JavaScript is required for the telemetry replay and release explorer. The original dashboards remain available in the <code>demos/</code> folder.</div></noscript>
+  <script src="assets/js/releases.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: OpenSat Mission Lab
+message: "Please cite this software when using it in research, education, or derived projects."
+type: software
+authors:
+  - family-names: G
+    given-names: SAMUELSON
+version: 3.1.0
+date-released: 2026-07-24
+license: MIT
+repository-code: "https://github.com/your-username/opensat-mission-lab"
