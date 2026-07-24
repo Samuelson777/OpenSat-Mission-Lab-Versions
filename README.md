@@ -84,7 +84,7 @@ The website provides:
 - responsive dark and light themes;
 - keyboard-accessible navigation and dialogs.
 
-After publishing the repository, replace the placeholder below with the final Pages URL:
+Published repository, final Pages URL:
 
 ```text
 https://samuelson777.github.io/OpenSat-Mission-Lab-Versions/
